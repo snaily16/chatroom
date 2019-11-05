@@ -1,0 +1,127 @@
+<html lang="en">
+	<head>
+        <title>Profile Page</title>
+        
+        <!--CSS styles-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+     
+
+    </head>
+	
+
+    <body>
+
+        <div id="wrapper">
+            <a href="#sidebar" class="mobilemenu"><i class="icon-reorder"></i></a>
+
+			<div id="sidebar">
+                <div id="main-nav" class="ps-container">
+                    <div id="nav-container">
+                        <div id="profile" class="clearfix">
+                            <div class="portrate hidden-xs"></div>
+                            <div class="title">
+                                <h2><?php echo $user; ?></h2>
+                                <h3>MNIT</h3>
+                            </div>
+                            
+                        </div>
+                        <ul id="navigation">
+                            <li class="currentmenu">
+                              <a href="profile.php">
+                                <div class="icon icon-user"></div>
+                                <div class="text">About Me</div>
+                              </a>
+                            </li>  
+                            
+                            <li>
+                              <a href="editprof.php">
+                                <div class="icon icon-book"></div>
+                                <div class="text">Edit Profile</div>
+                              </a>
+                            </li>
+
+							<li>
+                              <a href="chat.php">
+                                <div class="icon icon-picture"></div>
+                                <div class="text">Chat</div>
+                              </a>
+                            </li>
+                           
+                            <li>
+                              <a href="logout.php">
+                                <div class="icon icon-picture"></div>
+                                <div class="text">Logout</div>
+                              </a>
+                            </li>
+                        </ul>
+                    </div>        
+                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px; width: 250px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px; height: 614px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+                   
+            </div>
+
+            <div id="main">
+            
+                <div id="biography" class="page home" data-pos="home">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+                                
+                                <div class="row">
+                                    <div class="col-sm-2 visible-sm"></div>
+                                    <div class="col-sm-7 col-md-4">
+                                        <div class="biothumb">
+                                            <?php echo "<img src=uploads/".$file_name."  class='img-responsive ' />" ?>
+                                            <div class="overlay">
+                                                
+                                                <h2 class=""><b><?php echo $namefn, ' ', $nameln; ?></b></h2>
+                                                
+                                            </div> 
+                                            
+                                               
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="clearfix visible-sm visible-xs"></div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <h3 class="title">About me</h3>
+                                     
+								<div class="table-responsive">
+									<table class="table table-striped">
+										<tr>
+										<td>Name</td>
+										<td><?php echo $namefn,' ' ,$nameln; ?></td>
+										</tr>
+										<tr>
+										<td>Supervisor's Name</td>
+										<td><?php echo $supervisor; ?></td>
+										</tr>
+										<tr>
+										<td>Roll no.</td>
+										<td><?php echo $user; ?></td>
+										</tr>
+										<tr>
+										<td>Contact </td>
+										<td ><?php echo $phone; ?></td>
+										</tr>
+										<tr>
+										<td>Email id</td>
+										<td><?php echo $email; ?></td>
+										</tr>
+										<tr>
+										<td>Date of Birth</td>
+										<td><?php echo $dob; ?></td>
+										</tr>
+										
+										
+									</table>
+								</div>
+                                    </div>  
+                                    
+                                </div>
+                            </div>        
+                        </div>
+                    </div>
+       
+</body>
+</html>
