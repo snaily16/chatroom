@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2019 at 09:15 PM
+-- Generation Time: Nov 08, 2019 at 08:54 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -40,8 +40,15 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`send_id`, `recv_id`, `time`, `message`) VALUES
-('2019PCP5333', '', '2019-11-05 18:24:22', 'didi'),
-('2019PCP5150', '2019PCP5333', '2019-11-05 19:09:21', 'dkjfjkd');
+('2019PCP5150', '2019PCP5333', '2019-11-05 19:09:21', 'dkjfjkd'),
+('2019PCP5150', 'cse', '2019-11-06 13:48:53', 'hii'),
+('2019PCP5150', 'cse', '2019-11-06 13:48:59', 'hii'),
+('2019PCP5333', '', '2019-11-06 13:50:37', 'hii'),
+('2019IS5392', 'is', '2019-11-06 13:56:44', 'hey is'),
+('2019PCP5335', 'cse', '2019-11-06 14:11:03', 'welcome'),
+('2019PCP5150', 'cse', '2019-11-06 14:33:53', 'bello'),
+('2019PCP5150', 'cse', '2019-11-06 14:40:25', 'hi'),
+('2019PCP5150', 'cse', '2019-11-08 17:49:29', 'hii');
 
 -- --------------------------------------------------------
 
@@ -72,19 +79,20 @@ CREATE TABLE `user_details` (
   `email` varchar(50) NOT NULL,
   `phone` int(12) NOT NULL,
   `image` text NOT NULL,
-  `dob` date NOT NULL
+  `dob` date NOT NULL,
+  `aboutMe` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`id`, `fname`, `lname`, `dept`, `year`, `supervisor_name`, `password`, `email`, `phone`, `image`, `dob`) VALUES
-('2019IS5392', 'Kirti', 'Dubey', 'is', 2019, 'Prof. Vijay Lakshmi', '1234', 'kirti@gmail.com', 2147483647, 'kk.jpg', '1995-09-23'),
-('2019PCP5150', 'Snehal', 'Gharat', 'cse', 2019, 'Neeta Nain', 'hello', 'snaily16@gmail.com', 997522616, 'oW1dGDI.jpg', '1997-04-17'),
-('2019PCP5333', 'Shabnam', 'Ali', '', 2019, 'Satyendra ', '12345', 'shabbo@gmail.com', 987654323, 'images.jfif', '0000-00-00'),
-('2019PCP5334', 'Deepali', 'Singh', '', 2019, '', '12345', 'deep@gmail.com', 998877334, 'deep.webp', '0000-00-00'),
-('2019PCP5335', 'Pratibha', 'Rawat', 'cse', 2019, 'Mr. Arka', '4321', 'prati@gmail.com', 2147483647, 'p.gif', '2019-11-29');
+INSERT INTO `user_details` (`id`, `fname`, `lname`, `dept`, `year`, `supervisor_name`, `password`, `email`, `phone`, `image`, `dob`, `aboutMe`) VALUES
+('2019IS5392', 'Kirti', 'Dubey', 'is', 2019, 'Prof. Vijay Lakshmi', '1234', 'kirti@gmail.com', 2147483647, 'kk.jpg', '1995-09-23', 'This is my status'),
+('2019PCP5150', 'Snehal', 'Gharat', 'cse', 2019, 'Neeta Nain', 'hello', 'snaily16@gmail.com', 997522616, 'oW1dGDI.jpg', '1997-04-17', 'hi i am new here'),
+('2019PCP5333', 'Shabnam', 'Ali', 'CSE', 2019, 'Satyendra ', '12345', 'shabbo@gmail.com', 987654323, 'images.jfif', '0000-00-00', 'Computer Engineer, loves drawing, singing'),
+('2019PCP5334', 'Deepali', 'Singh', '', 2019, '', '12345', 'deep@gmail.com', 998877334, 'deep.webp', '0000-00-00', ''),
+('2019PCP5335', 'Pratibha', 'Rawat', 'cse', 2019, 'Mr. Arka', '4321', 'prati@gmail.com', 2147483647, 'p.gif', '2019-11-29', '');
 
 --
 -- Indexes for dumped tables
