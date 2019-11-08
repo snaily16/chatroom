@@ -1,14 +1,9 @@
-body {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 0 20px;
-}
-.container {
+.chatcontainer {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 8px 0;
 }
 
 .darker {
@@ -16,21 +11,21 @@ body {
   background-color: #ddd;
 }
 
-.container::after {
+.chatcontainer::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.container img {
+.chatcontainer img {
   float: left;
-  max-width: 60px;
+  max-width: 40px;
   width: 100%;
   margin-right: 20px;
   border-radius: 50%;
 }
 
-.container img.right {
+.chatcontainer img.right {
   float: right;
   margin-left: 20px;
   margin-right:0;

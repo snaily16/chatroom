@@ -4,7 +4,7 @@ include("base.php");
 	 $user=$_SESSION['tempuser'];
 	 if ($_SESSION['tempuser']) {
 		 
-		 		$query = "SELECT * from user_details where id='$user' "; 
+		$query = "SELECT * from user_details where id='$user' "; 
 	 	$details = mysqli_query($conn, $query);
 	 	$val = mysqli_fetch_assoc($details);
 	 	$namefn = $val['fname'];
@@ -14,6 +14,8 @@ include("base.php");
         $supervisor = $val['supervisor_name'];
 		$file_name = $val['image'];
 		$dob = $val['dob'];
+		$abtme = $val['aboutMe'];
+		$dept = $val['dept'];
 		?>
 <html lang="en">
 	<head>
@@ -22,6 +24,7 @@ include("base.php");
         <!--CSS styles-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Sunshiney&display=swap" rel="stylesheet">
      
 
     </head>
@@ -56,12 +59,19 @@ include("base.php");
                                     <div class="clearfix visible-sm visible-xs"></div>
                                     <div class="col-sm-12 col-md-7">
                                         <h3 class="title">About me</h3>
+                                        <hr>
+                                        <h4 style="font-family: 'Sunshiney', cursive;;"><?php echo $abtme; ?></h4>
+                                        <hr>
                                      
 								<div class="table-responsive">
 									<table class="table table-striped">
 										<tr>
 										<td>Name</td>
 										<td><?php echo $namefn,' ' ,$nameln; ?></td>
+										</tr>
+										<tr>
+										<td>Department</td>
+										<td><?php echo $dept; ?></td>
 										</tr>
 										<tr>
 										<td>Supervisor's Name</td>

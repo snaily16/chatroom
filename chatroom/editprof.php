@@ -9,13 +9,15 @@ $last=$_POST['lname'];
 $supname = $_POST['supervisor_name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
+$dept = $_POST['dept'];
 $year = $_POST['year'];
+$aboutme = $_POST['aboutme'];
 $pic_file = $_FILES['pic_file']['name'];
 $target = "uploads/".basename($_FILES['pic_file']['name']);
 
 	 	$sql = "UPDATE user_details set fname='$first', lname='$last',
-		supervisor_name='$supname', email='$email', phone='$phone', 
-		year='$year', image='$pic_file' where id='$user'";
+		supervisor_name='$supname', dept='$dept', email='$email', phone='$phone', 
+		year='$year', image='$pic_file', aboutMe='$aboutme' where id='$user'";
 	 	
 	 	
 	 	if (mysqli_query($conn, $sql)) {
@@ -48,6 +50,8 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
 		$phone = $val['phone'];
 		$year = $val['year'];
 		$pimg = $val['image'];
+        $abtme = $val['aboutMe'];
+        $dept = $val['dept'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +81,7 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
                                     <div class="col-sm-2 visible-sm"></div>
                                               
                                         
-                                       <form method="POST" action="editprof.php" enctype="multipart/form-data">
+                                       <form method="POST" id="editdetails" action="editprof.php" enctype="multipart/form-data">
                                     <div class="clearfix visible-sm visible-xs"></div>
                                     <div class="col-sm-12 col-md-7">
                                         <h3 class="title">Edit Profile</h3>
@@ -94,6 +98,12 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
                                         </div>
                                         <div class="col-sm-8">
                                         <p><input type="text" name="lname" value="<?php echo $nameln; ?>"></p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                        <p>Department:</p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                        <p><input type="text" name="dept" value="<?php echo $dept; ?>"></p>
                                         </div>
                                         <div class="col-sm-4">
                                         <p>Supervisor's name:</p>
@@ -124,8 +134,12 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
 										<p>Profile image</p>
 										</div>
 										<div class="col-sm-8">
-										<input type='file' name='pic_file' value="<?php echo $pimg; ?>" accept="image/*" onchange="readURLpic(this)";>
+										<input type='file' name='pic_file' value="<?php echo 'uploads/'.$pimg; ?>" accept="image/*" onchange="readURLpic(this)";>
 										</div>
+
+                                        <div class="col-md-8">
+                                        <textarea form="editdetails" placeholder="About me:" name="aboutme" form="editdetails" value="<?php echo $abtme; ?>"></textarea>
+                                        </div>
 										<br>
 										<div class="col-md-12">
 										<input type="submit" name="submitdetails" value="Submit">

@@ -9,6 +9,7 @@ include("base.php");
 		$row = mysqli_fetch_array($run_q1);
 		
 		$name = $row['fname'];
+		$dept = $row['dept'];
 		$uimg = $row['image'];           	
            
 ?>
@@ -37,71 +38,65 @@ include("base.php");
 			<div id="main">
 			
 				<div class="container-fluid">
-					<h2>Chat Messages</h2>
+					<h2>GroupChat</h2>
 					<div class="container-fluid ">
 						<div class="row">
-
 						
 							<div class="col-md-8">
+								<?php
 
-								<!-- getting the user data on which user click -->
-							<?php 
-								if(isset($_GET['user_id'])){
-									$uid = $_GET['user_id'];
-									$q2 = "Select * from user_details where id = '$uid'";
-									$run_q2 = mysqli_query($conn, $q2);
-									$row_user = mysqli_fetch_array($run_q2);
-									$rname = $row_user['fname'];
-									$rimg = $row_user['image'];
+									echo "<h3>$dept</h3>";
+									$q_msg = "Select * from chat where recv_id = '$dept' order by 1 ASC";
+									$run_msg = mysqli_query($conn, $q_msg);
 
-								echo "<h3>$rname $uid</h3>";
-								}
-								else{
-									$uid=NULL;
-								}
-								echo "<p>$uid</p>";
-								$q_msg = "Select * from chat where (send_id='$user' AND recv_id = '$uid') 
-								OR (send_id='$uid' AND recv_id='$user') order by 1 ASC";
-								$run_msg = mysqli_query($conn, $q_msg);
+									while($row = mysqli_fetch_array($run_msg)){
+										$s_user = $row['send_id'];
+										$msg = $row['message'];
+										$msg_time = $row['time'];
 
-								while($row = mysqli_fetch_array($run_msg)){
-									$s_user = $row['send_id'];
-									$r_user = $row['recv_id'];
-									$msg = $row['message'];
-									$msg_time = $row['time'];
- 								
-							?>
+								?>
 								<ul class="list-group">
 
 
 									<?php
-										if($user==$s_user AND $uid==$r_user){
+
+										if($user==$s_user){
 											echo " 
-												<div class='container'>
+												<div class='container chatcontainer'>
 											<img src='uploads/$uimg'; alt='Avatar' style='width:10%;'>
 								  			<p>$msg</p>
-								  <span class='time-right'>$user <small>$msg_time</small></span>
+								  			<span class='time-right'><small>$msg_time</small></span><br>
+								  			<span class='time-right'>$name</span>
 								  		
 											";
 										} 
 									
-										else if($user==$r_user AND $uid==$s_user){
-											echo "<div class='container darker'>
-											<img src='uploads/$rimg'; alt='Avatar' style='width:10%;'>
+										else {
+											$q_user = "Select * from user_details where id = '$s_user'";
+											$run_u = mysqli_query($conn, $q_user);
+											$row_u = mysqli_fetch_array($run_u);
+		
+											$sid = $row_u['id'];
+											$simg = $row_u['image'];
+											$sname = $row_u['fname'];
+
+											echo "<div class='container chatcontainer darker'>
+											<img src='uploads/$simg'; alt='Avatar' style='width:10%;'>
 								  			<p>$msg</p>
-								  <span class='time-right'>$uid <small>$msg_time</small></span>
+								  			<span class='time-right'><small>$msg_time</small></span><br>
+								  			<span class='time-right'>$sname</span>
 											";
 										} 
 									?>
 								</div>
 								</ul>
-								<?php 
-									}
-								?>
-
+								
+								<?php
+							}
+							?>
 								<div class="row">
 									<center>
-									<form method="POST" action="chat.php">
+									<form method="POST" action="groupchat.php">
 										<input autocomplete="off" type="text" name="msg_content" placeholder="Write your message.....">
 										<input type="submit" name="send" value="Send">
 									</form>
@@ -117,21 +112,40 @@ include("base.php");
 					           					<strong>Enter message</strong>
 					           			";
 					           		}
-					           		else if($uid != NULL){
-					           			$q_insert = "insert into chat (send_id, recv_id, message) values ('$user', '$uid', '$msg')";
+					           		else {
+					           			$q_insert = "insert into chat (send_id, recv_id, message) values ('$user', '$dept', '$msg')";
 					           			$run_qi = mysqli_query($conn, $q_insert);
 
 					           		}
 					           	}
-           	?>
+           						?>
 							
 							</div>
 							
 							
 							<div class="col-md-4">
-								<h4>Users</h4>
+								<h4>Group Members</h4>
 								<ul class="list-group">
-									<?php include("getusers.php"); ?>
+									<?php 
+									$all_users = "select * from user_details where dept='$dept'";
+								 	$run_all = mysqli_query($conn, $all_users);
+								 	while($row_user = mysqli_fetch_array($run_all)){
+								 		$user_id = $row_user['id'];
+								 		$username = $row_user['fname'];
+								 		$userlname = $row_user['lname'];
+								 		$user_img = $row_user['image'];
+
+								 		echo "
+								 			<li class='list-group-item'>
+								 			<div>
+								 				
+								 				<p><img src='uploads/$user_img' style='width:20%;'>$username $userlname</p>
+								 			</div>
+								 			</li>
+								 		";
+								 	
+								 	}
+									 ?>
 								</ul>
 							</div>
 						</div>
