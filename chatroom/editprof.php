@@ -60,7 +60,7 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
         
         <!--CSS styles-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sidenav_style.css">
        
 
 
@@ -69,8 +69,8 @@ $target = "uploads/".basename($_FILES['pic_file']['name']);
     <body>
 
         <div id="wrapper">
-           <?php include("sidebar.html"); ?>
-            <div id="main">
+           <?php include("sidenav.html"); ?>
+            <div class="main">
             
                 <div id="biography" class="page home" data-pos="home">
                     <div class="pageheader">

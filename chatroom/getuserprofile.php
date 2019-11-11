@@ -16,15 +16,15 @@ include("base.php");
 	 		echo "
 	 			<li class='list-group-item'>
 	 			<center>
-	 			<div class='card' style='width:250px; height:200px'>
-				    <img class='card-img-top' src='uploads/$user_img' style='width:25%';>
+	 			<div class='card' style='width:250px; height:200px; background:	#F0FFFF;'>
+				    <img class='card-img-top' src='uploads/$user_img' style='width:15%';>
 				    <div class='card-body'>
 				    	<h4>$username $userlname<h4>
 				    	<h6>$abtme<h6>
 				    	<a href='friends.php?user_id=$user_id' class='btn btn-primary'>View Profile</a>
 				    </div> 
 				    
-				  </div>
+				</div>
 	 			</center>
 	 			</li>
 	 		";

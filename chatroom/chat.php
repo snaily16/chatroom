@@ -23,7 +23,7 @@ include("base.php");
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sidenav_style.css">
 		<link rel="stylesheet" href="chatstyle.css">
      
     </head>
@@ -32,9 +32,9 @@ include("base.php");
     <body>
 
         <div id="wrapper">
-            <?php include("sidebar.html"); ?>
+            <?php include("sidenav.html"); ?>
 			
-			<div id="main">
+			<div class="main">
 			
 				<div class="container-fluid">
 					<h2>Chat Messages</h2>
@@ -77,16 +77,15 @@ include("base.php");
 									<?php
 										if($user==$s_user AND $uid==$r_user){
 											echo " 
-												<div class='container'>
+												<div class='chatcontainer container'>
 											<img src='uploads/$uimg'; alt='Avatar' style='width:10%;'>
 								  			<p>$msg</p>
 								  <span class='time-right'>$user <small>$msg_time</small></span>
-								  		
 											";
 										} 
 									
 										else if($user==$r_user AND $uid==$s_user){
-											echo "<div class='container darker'>
+											echo "<div class='chatcontainer container darker'>
 											<img src='uploads/$rimg'; alt='Avatar' style='width:10%;'>
 								  			<p>$msg</p>
 								  <span class='time-right'>$uid <small>$msg_time</small></span>

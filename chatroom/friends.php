@@ -25,7 +25,7 @@ include("base.php");
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Pacifico|Yeon+Sung&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sidenav_style.css">
 		<link rel="stylesheet" href="chatstyle.css">
      
     </head>
@@ -34,16 +34,16 @@ include("base.php");
     <body>
 
         <div id="wrapper">
-            <?php include("sidebar.html"); ?>
+            <?php include("sidenav.html"); ?>
 			
-			<div id="main">
+			<div class="main">
 			
 				<div class="container-fluid">
 					<h2 style="padding-top: 20px;">View Profiles</h2><br>
 					<div class="container-fluid ">
 						<div class="row">
 						
-							<div class="col-md-8">
+							<div class="col-md-7">
 									<!-- getting the user data on which user click -->
 									<?php 
 									if(isset($_GET['user_id'])){
@@ -60,17 +60,19 @@ include("base.php");
 									$dob = $row_user['dob'];
 									$abtme = $row_user['aboutMe'];
 									$dept = $row_user['dept'];
+									$img = $row_user['image'];
 									}
 									else{
-										$uid='';
-										$namefn = '';
-								 	$nameln = '';
-									$email = '';
-							        $supervisor = '';
-									$file_name = '';
-									$dob = '';
-									$abtme = '';
-									$dept = '';
+										$uid='..........';
+										$namefn = '..........';
+									 	$nameln = '..........';
+										$email = '..........';
+								        $supervisor = '..........';
+										$file_name = '..........';
+										$dob = '..........';
+										$abtme = '..........';
+										$dept = '..........';
+										$img = 'default.png';
 									}
 									?>
 
@@ -114,9 +116,12 @@ include("base.php");
 								
 							
 							</div>
+							<div class="col-md-2" style="padding: 20px;">
+								<img src="uploads/<?php echo $img; ?>" alt="user_image" style="width: 50%;">
+							</div>
 							
 							
-							<div class="col-md-4">
+							<div class="col-md-3" >
 								<h4>Users</h4>
 								<ul class="list-group">
 									<?php include("getuserprofile.php"); ?>

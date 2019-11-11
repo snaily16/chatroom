@@ -23,7 +23,7 @@ include("base.php");
         
         <!--CSS styles-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sidenav_style.css">
         <link href="https://fonts.googleapis.com/css?family=Sunshiney&display=swap" rel="stylesheet">
      
 
@@ -33,8 +33,8 @@ include("base.php");
     <body>
 
         <div id="wrapper">
-            <?php include("sidebar.html"); ?>
-            <div id="main">
+            <?php include("sidenav.html"); ?>
+            <div class="main">
             
                 <div id="biography" class="page home" data-pos="home">
                     <div class="pageheader">
@@ -45,7 +45,7 @@ include("base.php");
                                     <div class="col-sm-2 visible-sm"></div>
                                     <div class="col-sm-7 col-md-4">
                                         <div class="biothumb">
-                                            <?php echo "<img src=uploads/".$file_name."  class='img-responsive ' />" ?>
+                                            <?php echo "<img src=uploads/".$file_name."  class='img-responsive ' style='width:70%'/>" ?>
                                             <div class="overlay">
                                                 
                                                 <h2 class=""><b><?php echo $namefn, ' ', $nameln; ?></b></h2>
@@ -60,7 +60,7 @@ include("base.php");
                                     <div class="col-sm-12 col-md-7">
                                         <h3 class="title">About me</h3>
                                         <hr>
-                                        <h4 style="font-family: 'Sunshiney', cursive;;"><?php echo $abtme; ?></h4>
+                                        <h4 style="font-family: 'Sunshiney', cursive; font-size: 25px">"<?php echo $abtme; ?>"</h4>
                                         <hr>
                                      
 								<div class="table-responsive">

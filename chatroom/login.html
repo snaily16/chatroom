@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Pacifico|Yeon+Sung&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -31,17 +32,29 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
-    
+      header{
+    background:   #A0A0A0;
+    padding: 8px;
+  }
   .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
   }
+  
+  .main{
+    background-image: url("images/back.jpg");
+  padding-top: 100px;
+  padding-bottom: 330px;
 
-  body{
-    background-image: url("assets/image/back.jpg");
   }
 
+  .panel-title{
+    padding: 10px;
+    font-family:  Pacifico,Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
+  }
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
@@ -51,8 +64,10 @@
   </style>
 </head>
 <body>
-  <h2 style="text-align: center"><b>Malviya National Institute of Technology, Jaipur</b></h2>
-  <h4 style="text-align: center">Computer Science Department</h4>
+  <header>
+    <h2 style="text-align: center"><b>Malviya National Institute of Technology, Jaipur</b></h2>
+    <h4 style="text-align: center">Computer Science Department</h4>
+  </header>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -78,51 +93,52 @@
   </div>
 </nav>
 
-<body style=" background-color: white">
+<div class="container-fluid main">
 
 	<div class="container">
-		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"> 
+		<div id="loginbox" style="margin-top:60px; padding: 30px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"> 
               
             	<div class="panel panel-info" >
                 	<div class="panel-heading">
-                        	<div class="panel-title">Student Login</div>
+                        	<div class="panel-title" >Student Login</div>
                   	</div>     
 			<div style="padding-top:30px" class="panel-body">
 			
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
                         <form id="loginform" class="form-horizontal" role="form" method="POST" action="loginp.php">
-                                    
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="roll number">                                        
-				</div>
-                                
-				<div style="margin-bottom: 25px" class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-				</div>
+                                                      
+                  				<div style="margin-bottom: 25px" class="input-group">
+                  					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                          <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Roll number">                                        
+                  				</div>
+                                                  
+                  				<div style="margin-bottom: 25px" class="input-group">
+                  					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                          <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                  				</div>
 
-                                <div style="margin-top:10px" class="form-group">
-                                    <!-- Button -->
-					<div class="col-sm-12 controls">
-						<button type="submit" id="btn-login" class="btn btn-success" name="submit">Login </button>
-					</div>
-                                </div>
+                                                  <div style="margin-top:10px" class="form-group">
+                                                      <!-- Button -->
+                  					<div class="col-sm-12 controls">
+                  						<button type="submit" id="btn-login" class="btn btn-success" name="submit">Login </button>
+                  					</div>
+                        </div>
 
-			</form>     
-			</div>                     
-		</div>  
+        			</form>     
+        			</div>                     
+        		</div>  
         	</div>
 	
 	</div>
+</div>
 
 <style>
-body {
+/*body {
     font-family: "Lato", sans-serif;
-}
+}*/
 
-.sidenav {
+/*.sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -159,21 +175,9 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+}*/
+
 </style>
-</head>
-<body>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
 </body>
 </html> 
 

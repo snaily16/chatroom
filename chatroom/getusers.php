@@ -15,7 +15,6 @@ include("base.php");
 	 		echo "
 	 			<li class='list-group-item'>
 	 			<div>
-	 				
 	 				<p><a href='chat.php?user_id=$user_id'><img src='uploads/$user_img' style='width:20%;'>$username $userlname</a></p>
 	 			</div>
 	 			</li>

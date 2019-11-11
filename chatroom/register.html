@@ -4,11 +4,10 @@
   <title>ChatApp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-       
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Pacifico|Yeon+Sung&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!DOCTYPE html>
@@ -39,9 +38,23 @@
       margin: auto;
       min-height:200px;
   }
+  header{
+    background:   #A0A0A0;
+    padding: 8px;
+  }
 
-  body{
-    background-image: url("assets/image/back.jpg");
+  .main{
+    background-image: url("images/back.jpg");
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  }
+    .panel-title{
+    padding: 10px;
+    font-family:  Pacifico,Arial, sans-serif;
+    text-align: center;
+    font-size: 20px;
   }
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -53,9 +66,10 @@
   </style>
 </head>
 <body>
+<header>
   <h2 style="text-align: center"><b>Malviya National Institute of Technology, Jaipur</b></h2>
   <h4 style="text-align: center">Computer Science Department</h4>
-
+</header>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -80,10 +94,10 @@
   </div>
 </nav>
 
-<body style=" background-color: white">
+<div class="container-fluid main">
 
 	<div class="container">
-		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"> 
+		<div id="loginbox" style="margin-top:30px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"> 
               
             	<div class="panel panel-info" >
                 	<div class="panel-heading">
@@ -98,37 +112,37 @@
         <!---roll number -->            
 				<div style="margin-bottom: 25px" class="input-group">
 					<span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-                                        <input id="rollno" type="text" class="form-control" name="rollno" value="" placeholder="roll number">                                        
+                                        <input id="rollno" type="text" class="form-control" name="rollno" value="" placeholder="Roll number" required>                                        
 				</div>
                 
        <!---password -->                
 				<div style="margin-bottom: 25px" class="input-group">
 					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="password" type="password" class="form-control" name="password" placeholder="password">
+                                        <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
 				</div>
 
         <!---first name -->
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name">
+                                        <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name" required>
         </div>
 
         <!---last name -->
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name">
+                                        <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name" required>
         </div>
 
         <!---phone -->
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                                        <input id="phone" type="number" class="form-control" name="phone" placeholder="Phone number">
+                                        <input id="phone" type="number" class="form-control" name="phone" placeholder="Phone number" required>
         </div>
 		
 		<!-- department -->
 		<div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                                        <select id="dept"class="form-control" name="department" value=".">
+                                        <select id="dept"class="form-control" name="department" value="." >
 											<option value="CSE">CSE</option>
 											<option value="IS">IS</option>
 										</select>
@@ -137,12 +151,12 @@
 		<!-- email id -->
 		<div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        <input id="email" type="email" class="form-control" name="email" placeholder="Email id">
+                                        <input id="email" type="email" class="form-control" name="email" placeholder="Email id" required>
         </div>
 		<!-- date of birth -->
         <div style="margin-bottom: 25px" class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                        <input id="dateob" type="date" class="form-control" name="dob" placeholder="Date of birth">
+                                        <input id="dateob" type="date" class="form-control" name="dob" placeholder="Date of birth" required>
         </div>
 
                                 <div style="margin-top:10px" class="form-group">
@@ -158,64 +172,6 @@
         	</div>
 	
 	</div>
-
-<style>
-body {
-    font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-</head>
-<body>
-
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
 </body>
 </html> 
 

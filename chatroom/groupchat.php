@@ -11,7 +11,6 @@ include("base.php");
 		$name = $row['fname'];
 		$dept = $row['dept'];
 		$uimg = $row['image'];           	
-           
 ?>
 
 
@@ -24,7 +23,7 @@ include("base.php");
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="sidenav_style.css">
 		<link rel="stylesheet" href="chatstyle.css">
      
     </head>
@@ -33,16 +32,16 @@ include("base.php");
     <body>
 
         <div id="wrapper">
-            <?php include("sidebar.html"); ?>
+            <?php include("sidenav.html"); ?>
 			
-			<div id="main">
+			<div class="main">
 			
 				<div class="container-fluid">
 					<h2>GroupChat</h2>
 					<div class="container-fluid ">
 						<div class="row">
 						
-							<div class="col-md-8">
+							<div class="col-md-9">
 								<?php
 
 									echo "<h3>$dept</h3>";
@@ -63,7 +62,7 @@ include("base.php");
 										if($user==$s_user){
 											echo " 
 												<div class='container chatcontainer'>
-											<img src='uploads/$uimg'; alt='Avatar' style='width:10%;'>
+											<img src='uploads/$uimg'; alt='Avatar' style='width:15%;'>
 								  			<p>$msg</p>
 								  			<span class='time-right'><small>$msg_time</small></span><br>
 								  			<span class='time-right'>$name</span>
@@ -81,7 +80,7 @@ include("base.php");
 											$sname = $row_u['fname'];
 
 											echo "<div class='container chatcontainer darker'>
-											<img src='uploads/$simg'; alt='Avatar' style='width:10%;'>
+											<img src='uploads/$simg'; alt='Avatar' style='width:15%;'>
 								  			<p>$msg</p>
 								  			<span class='time-right'><small>$msg_time</small></span><br>
 								  			<span class='time-right'>$sname</span>
@@ -123,7 +122,7 @@ include("base.php");
 							</div>
 							
 							
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<h4>Group Members</h4>
 								<ul class="list-group">
 									<?php 
@@ -134,13 +133,21 @@ include("base.php");
 								 		$username = $row_user['fname'];
 								 		$userlname = $row_user['lname'];
 								 		$user_img = $row_user['image'];
+								 		$abtme = $row_user['aboutMe'];
 
 								 		echo "
 								 			<li class='list-group-item'>
-								 			<div>
-								 				
-								 				<p><img src='uploads/$user_img' style='width:20%;'>$username $userlname</p>
-								 			</div>
+			
+								 			<center>
+								 			<div class='card' style='width:300px; height:180px; background:	#F0FFFF; padding:10px'>
+											    <img class='card-img-top' src='uploads/$user_img' style='width:15%; border-radius: 50%;';>
+											    <div class='card-body'>
+											    	<h4>$username $userlname<h4>
+											    	<h6>$abtme<h6>
+											    </div> 
+											    
+											</div>
+								 			</center>
 								 			</li>
 								 		";
 								 	

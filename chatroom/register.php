@@ -16,7 +16,7 @@ $supname='';
 
 $sql = "Insert into user_details values ('$user','$fname','$lname','$dept',
 										'$year','$supname','$pass','$email',
-										'$phone','$profileimg','$dob')";
+										'$phone','$profileimg','$dob','Hey there, this is my status')";
 	 	
 $que1 = mysqli_query($conn, $sql);
 if ($que1) {
